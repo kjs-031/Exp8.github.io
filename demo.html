@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script>
+        var app = angular.module("myapp", []);  // module
+        app.controller("control", function($scope){
+            $scope.add = function(){
+                // alert($scope.data);
+
+                var n1 = parseInt($scope.n1);
+                var n2 = parseInt($scope.n2);
+                $scope.result = "Sum: " + (n1+n2);    //model
+            }
+        });
+    </script>
+</head>
+<body ng-app="myapp" ng-controller="control">
+    <!-- Enter Data: <input type="text" ng-model="data"><br><br>
+    <div ng-bind="data"></div>
+    <h1 ng-bind="data"></h1>
+    <p>{{data}}</p>
+    <button ng-click="add()">Click Me</button> -->
+
+    Number1: <input type="text" ng-model="n1" ng-keyup="add()"><br><br>
+    Number2: <input type="text" ng-model="n2" ng-keyup="add()"><br><br>
+    <!-- <button ng-click="add()">Addition</button><br><br> -->
+    <div ng-bind="result" style="color: red;"></div>
+    <div style="color: red;">{{result}}</div>
+</body>
+</html>
